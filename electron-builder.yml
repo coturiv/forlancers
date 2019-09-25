@@ -1,0 +1,56 @@
+productName: "ionic4-electron-starter"
+appId: "apps.coturiv.ionic4-electron-starter"
+
+files:
+  - "app/**/*.js"
+  - "www/**/*"
+  - "resources/**/*"
+
+# MacOS
+mac:
+  icon: "resources/electron/icon/icon.icns"
+  category: public.app-category.utilities
+
+# Config for OSX dmg
+dmg:
+  contents:
+    - x: 130
+      y: 220
+    - x: 410
+      y: 220
+      type: "link"
+      path: "/Applications"
+
+# Windows configuration
+win:
+  icon: "resources/electron/icon/icon.ico"
+  target:
+    - "nsis"
+    # - "msi"
+    # - "portable"
+    # - "zip"
+
+nsis:
+  allowToChangeInstallationDirectory: true
+  oneClick: false
+
+# Linux configuration
+linux:
+  icon: "resources/electron/icon/icon.png"
+  category: Utility
+  target:
+    - "AppImage"
+    # - "deb"
+    # - "rpm"
+    # - "snap"
+
+directories:
+  app: "desktop"
+
+artifactName: "${productName}-${arch}-${version}.${ext}"
+
+publish:
+  provider: "github"
+  releaseType: "release"
+  owner: coturiv
+  repo: ionic4-electron-starter

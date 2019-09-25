@@ -1,0 +1,48 @@
+image: Visual Studio 2017
+
+platform:
+  - x64
+
+clone_depth: 1
+
+cache:
+  - "%LOCALAPPDATA%/Yarn"
+  - node_modules
+
+skip_tags: true
+
+init:
+  - git config --global core.autocrlf input
+
+install:
+  - ps: Install-Product node 10 x64
+  - yarn
+
+# test
+before_build:
+  - yarn lint
+  - yarn ele:lint
+  # - yarn test
+
+# build
+build_script:
+  - yarn build
+
+for:
+  -
+    branches:
+      only:
+        - master
+        # - /^hotfix\/.*$/
+        # - /^release\/.*$/
+
+    deploy_script:
+      - yarn package --publish always
+  -
+    branches:
+      except:
+        - master
+      
+    deploy: off
+
+test: off

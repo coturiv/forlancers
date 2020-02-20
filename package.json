@@ -14,7 +14,7 @@
     "ele:copy-res": "cp -r resources/electron desktop/resources",
     "web:build": "ng build --prod --base-href=./",
     "web:copy": "cp -r www desktop",
-    "build": "npm run web:build && npm run web:copy && npm run ele:build",
+    "build": "npm run web:build && npm run web:copy",
     "package": "electron-builder --config electron-builder.yml",
     "test": "ng test",
     "lint": "ng lint",

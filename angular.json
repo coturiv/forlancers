@@ -2,13 +2,13 @@
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "version": 1,
   "defaultProject": "app",
-  "newProjectRoot": "apps",
+  "newProjectRoot": "projects",
   "projects": {
     "app": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
-      "prefix": "aps",
+      "prefix": "app",
       "schematics": {},
       "architect": {
         "build": {

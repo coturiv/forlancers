@@ -1,5 +1,5 @@
-productName: "ionic4-electron-starter"
-appId: "apps.coturiv.ionic4-electron-starter"
+productName: "ionic-electron-starter"
+appId: "apps.coturiv.ionic-electron-starter"
 
 files:
   - "app/**/*.js"
@@ -53,4 +53,4 @@ publish:
   provider: "github"
   releaseType: "release"
   owner: coturiv
-  repo: ionic4-electron-starter
+  repo: ionic-electron-starter

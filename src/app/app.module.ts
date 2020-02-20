@@ -7,20 +7,16 @@ import { ErrorHandler } from './shared/handlers/error.handler';
 import { HttpInterceptor } from './shared/interceptors/http.interceptor';
 
 import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
-
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
-
 
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
   imports: [
     BrowserModule,
-    IonicModule.forRoot({
-      mode: 'md'
-    }),
     HttpClientModule,
+    IonicModule.forRoot(),
     AppRoutingModule
   ],
   providers: [
@@ -30,4 +26,4 @@ import { AppRoutingModule } from './app-routing.module';
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule { }

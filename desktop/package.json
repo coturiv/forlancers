@@ -1,10 +1,10 @@
 {
-  "name": "ionic4-electron-starter",
+  "name": "ionic-electron-starter",
   "version": "1.0.0",
   "author": "coturiv <coturiv@gmail.com>",
-  "homepage": "https://github.com/coturiv/ionic4-electron-starter",
+  "homepage": "https://github.com/coturiv/ionic-electron-starter",
   "license": "MIT",
-  "main": "app/main.js",
+  "main": "app/index.js",
   "dependencies": {
     "electron-is-dev": "^1.1.0",
     "os": "^0.1.1",

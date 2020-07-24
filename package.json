@@ -2,6 +2,7 @@
   "name": "forlancers",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://coturiv.github.io/forlancers",
   "dependencies": {
     "@fluentui/react": "^7.123.7",
     "@testing-library/jest-dom": "^4.2.4",
@@ -42,6 +43,18 @@
     "eslint-config-prettier": "^6.11.0",
     "eslint-plugin-prettier": "^3.1.4",
     "eslint-plugin-react": "^7.20.3",
+    "husky": "^4.2.5",
+    "lint-staged": "^10.2.11",
     "prettier": "^2.0.5"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,ts,tsx}": [
+      "eslint --fix"
+    ]
   }
 }

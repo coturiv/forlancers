@@ -1,2 +1,5 @@
+bin/
 build/
+public/
+config/
 node_modules/

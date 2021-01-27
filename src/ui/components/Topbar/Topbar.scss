@@ -1,0 +1,86 @@
+.topbar {
+
+    & ~ ion-router-outlet {
+        margin-top: var(--app-topbar-height) !important;
+    }
+    
+    ion-toolbar {
+        -webkit-app-region: drag;
+        --min-height: var(--app-topbar-height);
+
+        ion-thumbnail.topbar-logo {
+            width: var(--app-navbar-width);
+            height: var(--app-topbar-height);
+
+            img {
+                width: 28px;
+                height: 28px;
+                margin: 8px 16px; // (44 -28)/2, (60-28)/2
+            }
+        }
+
+        ion-title {
+            padding-left: 0;
+            font-size: 16px;
+            -webkit-user-select: none;
+            -webkit-app-region: drag;
+        }
+
+        ion-buttons {
+            margin-right: 0;
+
+            ion-button {
+                margin: 0;
+                -webkit-app-region: no-drag;
+            }
+
+            // Window buttons
+            &[slot="end"] {
+
+                ion-button {
+                    --padding-start: 0; // 16px
+                    --padding-end: 0;
+
+                    height: var(--app-topbar-height);
+                }
+                
+                ion-button:last-child {
+                    --background-hover: var(--ion-color-danger) !important;
+                    --background-hover-opacity: .9;
+                    --border-radius: 0;
+                }
+
+                .window-icon {
+                    height: 100%;
+                    width: 100%;
+                    -webkit-mask-size: 23.1%;
+                    mask-size: 23.1%;
+                    background-color: #eeeeee;
+                    width: 44px;
+                }
+        
+                .window-icon.window-close {
+                    -webkit-mask: url("data:image/svg+xml;charset=utf-8,%3Csvg width='11' height='11' viewBox='0 0 11 11' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6.279 5.5L11 10.221l-.779.779L5.5 6.279.779 11 0 10.221 4.721 5.5 0 .779.779 0 5.5 4.721 10.221 0 11 .779 6.279 5.5z' fill='%23000'/%3E%3C/svg%3E") no-repeat 50% 50%;
+                    mask: url("data:image/svg+xml;charset=utf-8,%3Csvg width='11' height='11' viewBox='0 0 11 11' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6.279 5.5L11 10.221l-.779.779L5.5 6.279.779 11 0 10.221 4.721 5.5 0 .779.779 0 5.5 4.721 10.221 0 11 .779 6.279 5.5z' fill='%23000'/%3E%3C/svg%3E") no-repeat 50% 50%;
+                }
+                .window-icon.window-maximize {
+                    -webkit-mask: url("data:image/svg+xml;charset=utf-8,%3Csvg width='11' height='11' viewBox='0 0 11 11' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 0v11H0V0h11zM9.899 1.101H1.1V9.9h8.8V1.1z' fill='%23000'/%3E%3C/svg%3E") no-repeat 50% 50%;
+                    mask: url("data:image/svg+xml;charset=utf-8,%3Csvg width='11' height='11' viewBox='0 0 11 11' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 0v11H0V0h11zM9.899 1.101H1.1V9.9h8.8V1.1z' fill='%23000'/%3E%3C/svg%3E") no-repeat 50% 50%;
+                }
+                .window-icon.window-unmaximize {
+                    -webkit-mask: url("data:image/svg+xml;charset=utf-8,%3Csvg width='11' height='11' viewBox='0 0 11 11' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 8.798H8.798V11H0V2.202h2.202V0H11v8.798zm-3.298-5.5h-6.6v6.6h6.6v-6.6zM9.9 1.1H3.298v1.101h5.5v5.5h1.1v-6.6z' fill='%23000'/%3E%3C/svg%3E") no-repeat 50% 50%;
+                    mask: url("data:image/svg+xml;charset=utf-8,%3Csvg width='11' height='11' viewBox='0 0 11 11' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 8.798H8.798V11H0V2.202h2.202V0H11v8.798zm-3.298-5.5h-6.6v6.6h6.6v-6.6zM9.9 1.1H3.298v1.101h5.5v5.5h1.1v-6.6z' fill='%23000'/%3E%3C/svg%3E") no-repeat 50% 50%;
+                }
+                .window-icon.window-minimize {
+                    -webkit-mask: url("data:image/svg+xml;charset=utf-8,%3Csvg width='11' height='11' viewBox='0 0 11 11' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 4.399V5.5H0V4.399h11z' fill='%23000'/%3E%3C/svg%3E") no-repeat 50% 50%;
+                    mask: url("data:image/svg+xml;charset=utf-8,%3Csvg width='11' height='11' viewBox='0 0 11 11' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 4.399V5.5H0V4.399h11z' fill='%23000'/%3E%3C/svg%3E") no-repeat 50% 50%;
+                }
+            }
+        }
+
+        ion-grid, ion-row, ion-col {
+            padding: 0;
+        }
+    }
+
+}

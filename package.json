@@ -2,59 +2,72 @@
   "name": "forlancers",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://coturiv.github.io/forlancers",
-  "dependencies": {
-    "@fluentui/react": "^7.123.7",
-    "@testing-library/jest-dom": "^4.2.4",
-    "@testing-library/react": "^9.5.0",
-    "@testing-library/user-event": "^7.2.1",
-    "@types/jest": "^24.9.1",
-    "@types/node": "^12.12.52",
-    "@types/react": "^16.9.43",
-    "@types/react-dom": "^16.9.8",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
-    "react-scripts": "3.4.1",
-    "typescript": "^3.7.5"
-  },
+  "author": "coturiv <coturiv@gmail.com>",
+  "homepage": "./",
+  "main": "build/main.js",
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
+    "clean": "rimraf build release",
+    "start": "cross-env BROWSER=none concurrently --kill-others \"npm:watch:*\"",
+    "watch:web": "react-scripts start",
+    "watch:electron": "webpack --config ./config/webpack.dev.js",
+    "build": "npm-run-all clean build:*",
+    "build:web": "react-scripts build",
+    "build:electron": "webpack --config ./config/webpack.prod.js",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "lint": "eslint src/**/*.{js,ts,tsx} --quiet"
+    "lint": "eslint src/**/*.{js,ts,tsx}",
+    "dist": "electron-builder --config ./config/electron-builder.yml",
+    "gen": "node bin/gen.js"
   },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+  "dependencies": {
+    "mime-types": "^2.1.27",
+    "uuid": "^8.3.2"
   },
   "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "^3.7.0",
-    "@typescript-eslint/parser": "^3.7.0",
-    "eslint": "^6.6.0",
-    "eslint-config-prettier": "^6.11.0",
+    "@ionic/react": "^5.0.7",
+    "@ionic/react-router": "^5.0.7",
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.4.0",
+    "@testing-library/user-event": "^8.0.3",
+    "@types/jest": "^24.0.25",
+    "@types/mime-types": "^2.1.0",
+    "@types/node": "^12.12.24",
+    "@types/react": "^16.9.17",
+    "@types/react-dom": "^16.9.4",
+    "@types/react-router": "^5.1.4",
+    "@types/react-router-dom": "^5.1.3",
+    "@types/uuid": "^8.3.0",
+    "@types/wait-on": "^5.2.0",
+    "@types/webpack-node-externals": "^2.5.0",
+    "@typescript-eslint/eslint-plugin": "^4.8.2",
+    "@typescript-eslint/parser": "^4.8.2",
+    "concurrently": "^5.3.0",
+    "cross-env": "^7.0.3",
+    "electron": "^10.1.5",
+    "electron-builder": "^22.9.1",
+    "eslint": "^7.14.0",
+    "eslint-config-prettier": "^6.15.0",
+    "eslint-config-react-app": "^6.0.0",
     "eslint-plugin-prettier": "^3.1.4",
-    "eslint-plugin-react": "^7.20.3",
-    "husky": "^4.2.5",
-    "lint-staged": "^10.2.11",
-    "prettier": "^2.0.5"
+    "eslint-plugin-react": "^7.21.5",
+    "husky": "^4.3.0",
+    "ionicons": "^5.0.0",
+    "lint-staged": "^10.5.2",
+    "mobx": "^6.0.4",
+    "mobx-react": "^7.0.5",
+    "node-sass": "^4.14.1",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^2.2.1",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-router": "^5.1.2",
+    "react-router-dom": "^5.1.2",
+    "react-scripts": "4.0.1",
+    "ts-loader": "^8.0.12",
+    "typescript": "^4.0.3",
+    "wait-on": "^5.2.1",
+    "webpack-cli": "^4.2.0",
+    "webpack-electron-reload": "^1.0.1",
+    "webpack-node-externals": "^2.5.2"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
-  "lint-staged": {
-    "*.{js,ts,tsx}": [
-      "eslint --fix"
-    ]
-  }
+  "description": "Forlancers - a toolkit for an Uhlan's daily work."
 }

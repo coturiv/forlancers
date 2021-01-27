@@ -1,0 +1,14 @@
+.client-list {
+    ion-searchbar {
+        --box-shadow: none;
+    }
+
+    ion-item {
+        ion-button {
+            width: 36px !important;
+            height: 36px !important;
+
+            margin: 0 6px !important;
+        }
+    }
+}

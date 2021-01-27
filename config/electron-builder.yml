@@ -1,0 +1,67 @@
+productName: "Forlancers"
+appId: "apps.coturiv.forlancers"
+
+files:
+  - "build/**/*"
+  - "!**/*.map"
+  - "!node_modules/**/*"
+
+extends: null
+
+# MacOS
+mac:
+  icon: "build/assets/icons/icon.icns"
+  category: public.app-category.utilities
+  electronLanguages: 
+    - "en"
+
+# Config for OSX dmg
+dmg:
+  contents:
+    - x: 130
+      y: 220
+    - x: 410
+      y: 220
+      type: "link"
+      path: "/Applications"
+
+# Windows configuration
+win:
+  icon: "build/assets/icons/icon.ico"
+  target:
+    - "nsis"
+    # - "msi"
+    # - "squirrel"
+    # - "portable"
+    # - "zip"
+    # - "dir"
+
+nsis:
+  allowToChangeInstallationDirectory: true
+  createDesktopShortcut: true
+  createStartMenuShortcut: true
+  oneClick: false
+  license: "LICENSE"
+
+# Linux configuration
+linux:
+  icon: "build/assets/icons/icon.png"
+  category: Utility
+  target:
+    - "AppImage"
+    # - "deb"
+    # - "rpm"
+    # - "snap"
+
+directories:
+  output: "release"
+
+artifactName: "${productName}-${arch}-${version}.${ext}"
+
+publish:
+  provider: "github"
+  releaseType: "release"
+  owner: coturiv
+  repo: forlancers
+  
+npmRebuild: false

@@ -1,0 +1,18 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "sourceMap": true,
+    "module": "commonjs",
+    "target": "es5",
+    "removeComments": true,
+    "noEmit": false,
+    "esModuleInterop": true,
+    "strictPropertyInitialization": false,
+    "typeRoots": [
+      "../../node_modules/@types"
+    ]
+  },
+  "include": [
+    "**/*.ts",
+  ]
+}

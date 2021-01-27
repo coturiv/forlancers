@@ -1,0 +1,17 @@
+ion-header {
+    &.header-md::after {
+        border-bottom: 1px solid #e3e3e3;
+        height: 0;
+        bottom: -1px;
+    }
+
+    ion-toolbar {
+        --max-height: var(--app-topbar-height) !important;
+        --min-height: var(--app-topbar-height) !important;
+
+        ion-button, ion-menu-button, ion-back-button {
+            width: var(--app-topbar-height) !important;
+            height: var(--app-topbar-height) !important;
+        }
+    }
+}
